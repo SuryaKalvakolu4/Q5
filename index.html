@@ -33,7 +33,7 @@
     <script>
         // Function to clear the quiz score from local storage
 function clearQuizScore() {
-    localStorage.removeItem("score2");
+    localStorage.removeItem("score5");
 }
 
 // Function to clear local storage when the tab is closed or refreshed
@@ -46,14 +46,14 @@ window.addEventListener('beforeunload', function() {
         // Quiz questions and answers
         const quiz = [
             {
-                question: "Do you also know from how many wells the raw water to be treated enters the waterworks?",
-                options: ["3 WELLS", "5 WELLS", "7 WELLS"],
-                answer: 0
+                question: "Can you also tell me what substance was used as an additive in chemical deacidification?",
+                options: ["caustic soda", "Manganese", "Chlorine"],
+                answer: 2
             }
         ];
 
         let currentQuestion = 0;
-        let score2 = 0;
+        let score5 = 0;
 
         // Function to display current question
         function displayQuestion() {
@@ -95,9 +95,9 @@ window.addEventListener('beforeunload', function() {
     }
 
     if (!isAnswered || selectedOption !== quiz[currentQuestion].answer) {
-        score2 = 0; // Assign zero score if question is not attempted or answered incorrectly
+        score5 = 0; // Assign zero score if question is not attempted or answered incorrectly
     } else {
-        score2++; // Increment score for correct answer
+        score5++; // Increment score for correct answer
     }
 }
 
@@ -108,8 +108,8 @@ window.addEventListener('beforeunload', function() {
 
             if (currentQuestion === quiz.length) {
                 // All questions answered, store score in local storage
-                localStorage.setItem("score2", score2);
-                alert("Quiz completed. Your score is " + score2);
+                localStorage.setItem("score5", score5);
+                alert("Quiz completed. Your score is " + score5);
             } else {
                 displayQuestion();
             }
